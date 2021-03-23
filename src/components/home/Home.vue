@@ -5,34 +5,32 @@
         <img :src="imgList[Math.abs(currentImg) % imgList.length]" />
       </div>
     </transition-group>
-    <h1>test</h1>
-    <h1>test</h1>
-    <h1>test</h1>
-    <h1>test</h1>
-    <h1>test</h1>
-    <h1>test</h1>
-    <h1>test</h1>
-    <h1>test</h1>
+    <product-list />
   </div>
 </template>
 
 <script>
+import ProductList from "../product/ProductList.vue";
+
 export default {
+  components: {
+    ProductList,
+  },
   data() {
     return {
       imgList: [
         "https://c4.wallpaperflare.com/wallpaper/157/340/999/car-sports-car-supercar-lamborghini-aventador-wallpaper-preview.jpg",
         "https://c4.wallpaperflare.com/wallpaper/323/372/925/lamborghini-car-lamborghini-aventador-vehicle-wallpaper-preview.jpg",
-        "https://c4.wallpaperflare.com/wallpaper/763/507/696/nissan-nissan-skyline-car-skyline-wallpaper-preview.jpg"
+        "https://c4.wallpaperflare.com/wallpaper/763/507/696/nissan-nissan-skyline-car-skyline-wallpaper-preview.jpg",
       ],
       currentImg: 0,
     };
   },
   mounted() {
     setInterval(() => {
-        this.currentImg = this.currentImg + 1;
+      this.currentImg = this.currentImg + 1;
     }, 5000);
-  }
+  },
 };
 </script>
 
